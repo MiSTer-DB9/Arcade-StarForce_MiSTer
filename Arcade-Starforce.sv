@@ -269,8 +269,8 @@ module emu
    //   Coin     <- joydb_1[11] (Mode/R-trigger)
    //   Pause    <- joydb_1[6]  (C, spare face button)
    //   Start 2P <- joydb_1[9]  (Z)
-   wire [15:0]  joystk1 = joydb_1ena ? (OSD_STATUS ? 16'b0 : {7'b0, joydb_1[9], joydb_1[6], joydb_1[11], joydb_1[10], joydb_1[4], joydb_1[3:0]}) : joystk1_USB;
-   wire [15:0]  joystk2 = joydb_2ena ? (OSD_STATUS ? 16'b0 : {7'b0, joydb_2[9], joydb_2[6], joydb_2[11], joydb_2[10], joydb_2[4], joydb_2[3:0]}) : joydb_1ena ? joystk1_USB : joystk2_USB;
+   wire [15:0]  joystk1 = joydb_1ena ? (OSD_STATUS ? 16'b0 : joydb_1_mapped[8:0]) : joystk1_USB;
+   wire [15:0]  joystk2 = joydb_2ena ? (OSD_STATUS ? 16'b0 : joydb_2_mapped[8:0]) : joydb_1ena ? joystk1_USB : joystk2_USB;
    // [MiSTer-DB9-Pro END]
    wire         direct_video;
    wire         flip_screen;
