@@ -483,7 +483,7 @@ module emu
    reg btn_coin_1  = 0;
 
 
-    wire m_start1  = btn_one_player  | joystk1[5]  | joystk2[5]  | btn_start_1;
+   wire m_start1  = btn_one_player  | joystk1[5]  | joystk2[5]  | btn_start_1;
    wire m_start2  = btn_two_players | joystk1[8]  | joystk2[8]  | btn_start_2;
 
    wire m_up1     = btn_up      | joystk1[3] ;
